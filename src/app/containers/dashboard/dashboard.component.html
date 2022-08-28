@@ -1,0 +1,28 @@
+<div class="container">
+  <div *ngIf="added===true">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Task successfully added!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+  <div *ngIf="removed===true">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Task successfully removed!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="header"><h1>Tasks</h1></div>
+          <tl-task-item [task]="taskItem" (removed)="removeTaskFormTaskList($event)" *ngFor="let taskItem of tasks$ | async"></tl-task-item>
+      </div>
+      <div class="col-lg-4 task__border">
+        <div class="header">
+          <div class="header">
+            <h1>Add Task</h1>
+          </div>
+        </div>
+        <tl-task-form (created)="addTask($event)"></tl-task-form>
+      </div>
+    </div>
+  </div>

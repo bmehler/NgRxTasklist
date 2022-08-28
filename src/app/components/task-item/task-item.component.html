@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header">
+     Task <span class="float-end">{{ task.status }}</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ task.title }}</h5>
+      <p class="card-text">{{ task.description }}</p>
+      <button (click)="removed.emit(task)" href="#" class="btn btn-danger float-end"><fa-icon [icon]="fatrash"></fa-icon> Trash</button>
+    </div>
+</div>
