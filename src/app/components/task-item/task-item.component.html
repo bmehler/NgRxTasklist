@@ -1,6 +1,19 @@
 <div class="card">
     <div class="card-header">
-     Task <span class="float-end">{{ task.status }}</span>
+     Task <span class="float-end">
+      <span [ngSwitch]="state()">
+        <span *ngSwitchCase="'backlog'">
+          <span class="badge bg-primary">Backlog</span>
+        </span>
+        <span *ngSwitchCase="'work'">
+          <span class="badge bg-danger">On work</span>
+        </span>
+        <span *ngSwitchCase="'finished'">
+          <span class="badge bg-success">Finished</span>
+        </span>
+        <span *ngSwitchDefault>Error</span>
+    </span>
+     </span>
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ task.title }}</h5>

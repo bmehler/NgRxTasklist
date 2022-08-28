@@ -16,4 +16,14 @@ export class TaskItemComponent {
 
   fatrash = faTrashCan;
 
+  state() {
+    if(this.task.status == '1') {
+      return 'backlog';
+    } else if(this.task.status == '2') {
+      return 'work';
+    } else {
+      return 'finished';
+    }
+  }
+
 }
