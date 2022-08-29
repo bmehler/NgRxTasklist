@@ -20,7 +20,7 @@ export class TaskItemComponent {
     if(this.task.status == '1') {
       return 'backlog';
     } else if(this.task.status == '2') {
-      return 'work';
+      return 'progress';
     } else {
       return 'finished';
     }
